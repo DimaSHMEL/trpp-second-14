@@ -7,6 +7,9 @@ plugins {
 version = "0.1"
 group = "ru.mirea"
 
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
 repositories {
     mavenCentral()
 }
@@ -60,13 +63,12 @@ compileTestJava {
 }
 
 javadoc {
-    options.encoding = 'UTF-8'
     source = sourceSets.main.allJava
     classpath = configurations.compile
 }
 
 shadowJar {
-    archivesBaseName = "${project.name}"
+    archivesBaseName = "${project.name} + SHMELEV"
     libsDirName = "${project.name}"
     classifier('')
 }
